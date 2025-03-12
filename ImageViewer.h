@@ -26,6 +26,9 @@ private:
     void loadImagesFromDirectory(const QString &dirPath);
 
     QString StartupMessage = "Stay tuned,cat pictures are loading";
+    int x=600;
+    int y =600;
+
 };
 
 #endif // IMAGEVIEWER_H

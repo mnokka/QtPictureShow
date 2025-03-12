@@ -10,22 +10,23 @@ ImageViewer::ImageViewer(QWidget *parent) : QWidget(parent), currentIndex(0)
 {
     setWindowTitle("Image Viewer MPN 2025");
 
-    resize(800, 600);
+    resize(x, y);
+    setFixedSize(size());
 
     // Initialize QLabel for displaying images
     imageLabel = new QLabel(this);
     imageLabel->setAlignment(Qt::AlignCenter);
-    imageLabel->resize(800, 600);
+    imageLabel->resize(x, y);
 
     imageLabel->setText(StartupMessage);
-    QFont font("Arial", 30, QFont::Bold);
+    QFont font("Arial", 25, QFont::Bold);
     imageLabel->setFont(font);
     QPalette palette;
     palette.setColor(QPalette::WindowText, Qt::darkRed);  // Asetetaan teksti vihreäksi
     imageLabel->setPalette(palette);
 
     imageLabel->setAutoFillBackground(true);
-    palette.setColor(QPalette::Window, Qt::darkGray);  // Vaihda taustaväri tummanharmaaksi
+    palette.setColor(QPalette::Window, QColor(53, 53, 53)); // Tummanharmaa taustaväri
     imageLabel->setPalette(palette);
 
     loadImagesFromDirectory("../..");  // QtCreatorrunning inside Build directory. Check when package created!
